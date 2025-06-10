@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Edit3, Calendar, Dumbbell } from 'lucide-react';
 
 const WorkoutTracker = () => {
@@ -6,6 +6,34 @@ const WorkoutTracker = () => {
   const [weights, setWeights] = useState({});
   const [editingWeight, setEditingWeight] = useState(null);
   const [tempWeight, setTempWeight] = useState('');
+
+  // Cargar datos al iniciar
+  useEffect(() => {
+    const savedWeights = localStorage.getItem('workoutWeights');
+    const savedDay = localStorage.getItem('currentDay');
+    
+    if (savedWeights) {
+      try {
+        setWeights(JSON.parse(savedWeights));
+      } catch (error) {
+        console.error('Error loading saved weights:', error);
+      }
+    }
+    
+    if (savedDay) {
+      setCurrentDay(parseInt(savedDay));
+    }
+  }, []);
+
+  // Guardar pesos cuando cambien
+  useEffect(() => {
+    localStorage.setItem('workoutWeights', JSON.stringify(weights));
+  }, [weights]);
+
+  // Guardar día actual cuando cambie
+  useEffect(() => {
+    localStorage.setItem('currentDay', currentDay.toString());
+  }, [currentDay]);
 
   const workoutData = {
     1: [
