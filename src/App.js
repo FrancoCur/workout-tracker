@@ -150,7 +150,7 @@ const WorkoutTracker = () => {
       {
         name: "Prensa 45 4 Capa",
         series: 4,
-        reps: "10 8 6 4 70 10 10 10",
+        reps: "10 8 6 4 10 10 10 10",
         color: "green"
       },
       {
