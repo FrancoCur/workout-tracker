@@ -62,51 +62,51 @@ const WorkoutTracker = () => {
         color: "green"
       },
       {
-        name: "Press Plano Con Barra",
+        name: "Jalón Al Pecho",
         series: 4,
         reps: "10 8 6",
         color: "green"
       },
       {
-        name: "Press Inclinado Con Mancuernas",
+        name: "Remo Bajo Agarre Abierto",
+        series: 4,
+        reps: "10 8 8",
+        color: "green"
+      },
+      {
+        name: "Jalón Al Pecho Agarre Cerrado (Triangular)",
+        series: 4,
+        reps: "10 8 6",
+        color: "green"
+      },
+      {
+        name: "Remo Unilateral Con Mancuerna",
         series: 4,
         reps: "10",
         color: "green"
       },
       {
-        name: "Press Declinado Con Barra",
+        name: "Press Militar En Máquina",
         series: 4,
-        reps: "10-10-8-8",
-        color: "green"
+        reps: "10 8 8",
+        color: "red"
       },
       {
-        name: "Aperturas En Banco Plano Con Mancuernas",
+        name: "Vuelo Lateral Con Mancuernas",
         series: 4,
         reps: "12",
-        color: "green"
-      },
-      {
-        name: "Bíceps En Banco Scott Con Barra",
-        series: 4,
-        reps: "12 10 10",
         color: "red"
       },
       {
-        name: "Bíceps Martillo Con Mancuerna",
+        name: "Vuelo Frontal Con Mancuernas",
         series: 4,
         reps: "10",
         color: "red"
       },
       {
-        name: "Francés Con Barra",
+        name: "Deltoide Posterior En Peck Deck",
         series: 4,
-        reps: "10 10 8 8",
-        color: "red"
-      },
-      {
-        name: "Extensión Con Soga En Polea",
-        series: 4,
-        reps: "12 12 10 10",
+        reps: "10 8 8",
         color: "red"
       }
     ],
@@ -405,8 +405,10 @@ const WorkoutTracker = () => {
                                 type="number"
                                 value={tempWeight}
                                 onChange={(e) => setTempWeight(e.target.value)}
-                                className="flex-1 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                className="w-14 px-1 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-orange-500 focus:border-transparent text-center"
                                 placeholder="0"
+                                maxLength="3"
+                                max="999"
                                 autoFocus
                               />
                               <button
